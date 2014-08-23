@@ -1,7 +1,6 @@
-package main
+package goreddit
 
 import (
-  "log"
   "net/http"
   "encoding/json"
   "fmt"
@@ -57,15 +56,4 @@ func Get(reddit string) ([]Item, error) {
   }
 
   return items, nil
-}
-
-func main() {
-  items, err := Get("golang")
-  if err != nil {
-    log.Fatal(err)
-  }
-
-  for _, item := range items {
-    fmt.Println(item)
-  }
 }
